@@ -112,7 +112,7 @@ SELECT PID,
        ROUND(neighborhood_avg) AS neighborhood_avg,
        ROUND(100.0 * (SalePrice - neighborhood_avg) / neighborhood_avg, 1) AS pct_vs_avg
 FROM with_avg
-WHERE SalePrice < 0.8 * neighborhood_avg
+WHERE SalePrice < 0.75 * neighborhood_avg
 ORDER BY pct_vs_avg;
 -- 15. Year-over-year change in average price
 with yearly as (
